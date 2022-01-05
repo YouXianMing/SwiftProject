@@ -1,6 +1,6 @@
 //
 //  Section_1_Footer.swift
-//  ThirdLibsExample
+//  SwiftProject
 //
 //  Created by YouXianMing on 2021/12/31.
 //
