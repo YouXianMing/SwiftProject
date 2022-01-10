@@ -11,5 +11,8 @@ target 'SwiftProject' do
   
   # 自动布局
   pod 'SnapKit'
+  
+  # IGListKit
+  pod 'IGListKit', '~> 4.0.0'
 
 end

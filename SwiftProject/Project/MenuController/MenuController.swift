@@ -36,18 +36,32 @@ class MenuController: NormalTitleViewController {
         HomeMenuCell.registerTo(customTableView.tableView)
         HomeMenuHeader.registerTo(customTableView.tableView)
         
-        let models = [
-            modelWith(CustomTableViewController.classForCoder(),       title: "CustomTableViewController"),
-            modelWith(CustomCollectionViewController.classForCoder(),  title: "CustomCollectionViewController"),
-            modelWith(TableViewAdapterController.classForCoder(),      title: "TableViewAdapterController"),
-            modelWith(CollectionViewAdapterController.classForCoder(), title: "CollectionViewAdapterController"),
-            modelWith(PlaceholderImageViewController.classForCoder(),  title: "PlaceholderImageViewController")
-        ]
- 
-        // 初始化section
+        // 常规内容
         do {
+            
+            let models = [
+                modelWith(CustomTableViewController.classForCoder(),       title: "CustomTableViewController"),
+                modelWith(CustomCollectionViewController.classForCoder(),  title: "CustomCollectionViewController"),
+                modelWith(TableViewAdapterController.classForCoder(),      title: "TableViewAdapterController"),
+                modelWith(CollectionViewAdapterController.classForCoder(), title: "CollectionViewAdapterController"),
+                modelWith(PlaceholderImageViewController.classForCoder(),  title: "PlaceholderImageViewController")
+            ]
+            
             let section = TableViewSection.init()
             section.header = HomeMenuHeader.adapter(data: "常规内容")
+            models.forEach { model in section.adapters.append(HomeMenuCell.adapter(data: model))}
+            customTableView.sections.append(section)
+        }
+        
+        // 第三方库使用
+        do {
+            
+            let models = [
+                modelWith(IGListKitController.classForCoder(), title: "IGListKitController"),
+            ]
+            
+            let section = TableViewSection.init()
+            section.header = HomeMenuHeader.adapter(data: "第三方库使用")
             models.forEach { model in section.adapters.append(HomeMenuCell.adapter(data: model))}
             customTableView.sections.append(section)
         }

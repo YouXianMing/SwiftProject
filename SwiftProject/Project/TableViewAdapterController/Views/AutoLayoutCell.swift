@@ -39,16 +39,16 @@ class AutoLayoutCell: BaseTableViewCell {
     
     override func cellSelectedEvent() {
         
-        print(adapter?.data ?? "")
+        appPrint(adapter?.data ?? "")
     }
     
     override func willDisplay(_ indexPath: IndexPath) {
         
-        print("AutoLayoutCell willDisplay")
+        appPrint("AutoLayoutCell willDisplay")
     }
     
     override func didEndDisplaying(_ indexPath: IndexPath) {
         
-        print("AutoLayoutCell didEndDisplaying")
+        appPrint("AutoLayoutCell didEndDisplaying")
     }
 }

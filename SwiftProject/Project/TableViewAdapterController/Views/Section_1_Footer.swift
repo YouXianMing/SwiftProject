@@ -40,13 +40,11 @@ class Section_1_Footer: BaseTableViewHeaderFooterView {
     
     override func willDisplay(_ section: Int) {
         
-        print("Section_1_Footer willDisplay")
+        appPrint("Section_1_Footer willDisplay")
     }
     
     override func didEndDisplaying(_ section: Int) {
         
-        print("Section_1_Footer didEndDisplaying")
-        
-        
+        appPrint("Section_1_Footer didEndDisplaying")
     }
 }

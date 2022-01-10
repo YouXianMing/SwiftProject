@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0457FAB12787E0E2002598FD /* IGListKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457FAB02787E0E2002598FD /* IGListKitController.swift */; };
 		04A97D932784247800A27432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97D922784247800A27432 /* AppDelegate.swift */; };
 		04A97D9A2784247800A27432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A97D982784247800A27432 /* Main.storyboard */; };
 		04A97D9C2784247A00A27432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A97D9B2784247A00A27432 /* Assets.xcassets */; };
@@ -63,10 +64,17 @@
 		04A97E23278424D100A27432 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97DEE278424D000A27432 /* BaseNavigationController.swift */; };
 		04A97E24278424D100A27432 /* LayoutBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97DEF278424D000A27432 /* LayoutBaseViewController.swift */; };
 		04A97E25278424D100A27432 /* NormalTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97DF1278424D000A27432 /* NormalTitleViewController.swift */; };
+		04B3CC9C278BD72900A58FBA /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CC9B278BD72900A58FBA /* DebugPrint.swift */; };
+		04B3CCB5278C0D1100A58FBA /* BaseIGListSectionDataDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCB4278C0D1100A58FBA /* BaseIGListSectionDataDiffable.swift */; };
+		04B3CCB7278C0EF900A58FBA /* BaseIGListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCB6278C0EF900A58FBA /* BaseIGListSectionController.swift */; };
+		04B3CCB9278C11C800A58FBA /* BaseIGListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCB8278C11C800A58FBA /* BaseIGListCell.swift */; };
+		04B3CCBB278C18B000A58FBA /* IGListType1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCBA278C18B000A58FBA /* IGListType1Cell.swift */; };
+		04B3CCBF278C1CE300A58FBA /* IGListCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCBE278C1CE300A58FBA /* IGListCellInfo.swift */; };
 		B9BB829CB345AFE0ABBB518F /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3041D646A553CEE58FE7A1 /* Pods_SwiftProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0457FAB02787E0E2002598FD /* IGListKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListKitController.swift; sourceTree = "<group>"; };
 		04A97D8F2784247800A27432 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A97D922784247800A27432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A97D992784247800A27432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +133,12 @@
 		04A97DEE278424D000A27432 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		04A97DEF278424D000A27432 /* LayoutBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutBaseViewController.swift; sourceTree = "<group>"; };
 		04A97DF1278424D000A27432 /* NormalTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTitleViewController.swift; sourceTree = "<group>"; };
+		04B3CC9B278BD72900A58FBA /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		04B3CCB4278C0D1100A58FBA /* BaseIGListSectionDataDiffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIGListSectionDataDiffable.swift; sourceTree = "<group>"; };
+		04B3CCB6278C0EF900A58FBA /* BaseIGListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIGListSectionController.swift; sourceTree = "<group>"; };
+		04B3CCB8278C11C800A58FBA /* BaseIGListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIGListCell.swift; sourceTree = "<group>"; };
+		04B3CCBA278C18B000A58FBA /* IGListType1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListType1Cell.swift; sourceTree = "<group>"; };
+		04B3CCBE278C1CE300A58FBA /* IGListCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListCellInfo.swift; sourceTree = "<group>"; };
 		BEFD1300795B8A818F73CC6C /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E831217CA7BA3811EE34AB43 /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		EA3041D646A553CEE58FE7A1 /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +156,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0457FAAE2787E0A1002598FD /* 常规内容 */ = {
+			isa = PBXGroup;
+			children = (
+				04A97DA7278424D000A27432 /* CollectionViewAdapterController */,
+				04A97DAE278424D000A27432 /* CustomTableViewController */,
+				04A97DBC278424D000A27432 /* TableViewAdapterController */,
+				04A97DC5278424D000A27432 /* PlaceholderImageViewController */,
+				04A97DC9278424D000A27432 /* CustomCollectionViewController */,
+			);
+			name = "常规内容";
+			sourceTree = "<group>";
+		};
+		0457FAAF2787E0B7002598FD /* 第三方库使用 */ = {
+			isa = PBXGroup;
+			children = (
+				0457FAB02787E0E2002598FD /* IGListKitController.swift */,
+				0457FAC727883A82002598FD /* Models */,
+				0457FAB22787E93A002598FD /* Views */,
+			);
+			name = "第三方库使用";
+			sourceTree = "<group>";
+		};
+		0457FAB22787E93A002598FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04B3CCBA278C18B000A58FBA /* IGListType1Cell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0457FAC727883A82002598FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		04A97D862784247800A27432 = {
 			isa = PBXGroup;
 			children = (
@@ -179,11 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				04A97DB5278424D000A27432 /* MenuController */,
-				04A97DA7278424D000A27432 /* CollectionViewAdapterController */,
-				04A97DAE278424D000A27432 /* CustomTableViewController */,
-				04A97DBC278424D000A27432 /* TableViewAdapterController */,
-				04A97DC5278424D000A27432 /* PlaceholderImageViewController */,
-				04A97DC9278424D000A27432 /* CustomCollectionViewController */,
+				0457FAAE2787E0A1002598FD /* 常规内容 */,
+				0457FAAF2787E0B7002598FD /* 第三方库使用 */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -316,6 +364,7 @@
 		04A97DCF278424D000A27432 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				04B3CCBD278C1CC100A58FBA /* IGListKit */,
 				04A97DD0278424D000A27432 /* Widget */,
 				04A97DE5278424D000A27432 /* Category */,
 				04A97DEA278424D000A27432 /* Util */,
@@ -394,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				04A97DEB278424D000A27432 /* Screen.swift */,
+				04B3CC9B278BD72900A58FBA /* DebugPrint.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -414,6 +464,17 @@
 				04A97DF1278424D000A27432 /* NormalTitleViewController.swift */,
 			);
 			path = ProjectBase;
+			sourceTree = "<group>";
+		};
+		04B3CCBD278C1CC100A58FBA /* IGListKit */ = {
+			isa = PBXGroup;
+			children = (
+				04B3CCBE278C1CE300A58FBA /* IGListCellInfo.swift */,
+				04B3CCB4278C0D1100A58FBA /* BaseIGListSectionDataDiffable.swift */,
+				04B3CCB6278C0EF900A58FBA /* BaseIGListSectionController.swift */,
+				04B3CCB8278C11C800A58FBA /* BaseIGListCell.swift */,
+			);
+			path = IGListKit;
 			sourceTree = "<group>";
 		};
 		5B9B1C2576E9ECE7C781A17F /* Frameworks */ = {
@@ -559,7 +620,9 @@
 				04A97E25278424D100A27432 /* NormalTitleViewController.swift in Sources */,
 				04A97E0B278424D100A27432 /* GoodsHeader.swift in Sources */,
 				04A97E17278424D100A27432 /* BaseTableViewCell.swift in Sources */,
+				04B3CCB9278C11C800A58FBA /* BaseIGListCell.swift in Sources */,
 				04A97E0A278424D100A27432 /* GoodsItemCell.swift in Sources */,
+				04B3CC9C278BD72900A58FBA /* DebugPrint.swift in Sources */,
 				04A97E03278424D100A27432 /* Section_1_Footer.swift in Sources */,
 				04A97E24278424D100A27432 /* LayoutBaseViewController.swift in Sources */,
 				04A97E14278424D100A27432 /* CollectionViewSection.swift in Sources */,
@@ -576,6 +639,7 @@
 				04A97E1F278424D100A27432 /* UIView+AddTapGesture.swift in Sources */,
 				04A97DFD278424D100A27432 /* MenuController.swift in Sources */,
 				04A97E05278424D100A27432 /* Section_2_Footer.swift in Sources */,
+				0457FAB12787E0E2002598FD /* IGListKitController.swift in Sources */,
 				04A97E01278424D100A27432 /* Section_2_Header.swift in Sources */,
 				04A97E07278424D100A27432 /* PlaceholderViewConfigs.swift in Sources */,
 				04A97E00278424D100A27432 /* TableViewAdapterController.swift in Sources */,
@@ -585,7 +649,9 @@
 				04A97E11278424D100A27432 /* CollectionViewCellAdapter.swift in Sources */,
 				04A97E1E278424D100A27432 /* NSObject+EventBlock.swift in Sources */,
 				04A97E1B278424D100A27432 /* CustomTableView.swift in Sources */,
+				04B3CCB7278C0EF900A58FBA /* BaseIGListSectionController.swift in Sources */,
 				04A97E1C278424D100A27432 /* TableViewCellAdapter.swift in Sources */,
+				04B3CCBB278C18B000A58FBA /* IGListType1Cell.swift in Sources */,
 				04A97DFE278424D100A27432 /* HomeMenuHeader.swift in Sources */,
 				04A97E15278424D100A27432 /* BaseCollectionReusableView.swift in Sources */,
 				04A97E1A278424D100A27432 /* TableViewHeaderFooterViewAdapter.swift in Sources */,
@@ -598,9 +664,11 @@
 				04A97DF5278424D100A27432 /* CollectionViewAutolayoutCell.swift in Sources */,
 				04A97E21278424D100A27432 /* Screen.swift in Sources */,
 				04A97E04278424D100A27432 /* AutoLayoutCell.swift in Sources */,
+				04B3CCBF278C1CE300A58FBA /* IGListCellInfo.swift in Sources */,
 				04A97DFC278424D100A27432 /* ControllerModel.swift in Sources */,
 				04A97E09278424D100A27432 /* CustomCollectionViewController.swift in Sources */,
 				04A97E18278424D100A27432 /* BaseTableViewHeaderFooterView.swift in Sources */,
+				04B3CCB5278C0D1100A58FBA /* BaseIGListSectionDataDiffable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,17 +35,16 @@ class CustomCollectionViewController: NormalTitleViewController {
             
             if let _ = view as? GoodsItemCell {
             
-                print(data ?? "")
+                appPrint(data ?? "")
                 
             } else if let _ = view as? GoodsHeader {
                 
-                print(data ?? "")
+                appPrint(data ?? "")
                 
             } else if let _ = view as? GoodsFooter {
                 
-                print(data ?? "")
+                appPrint(data ?? "")
             }
-            
         }
         
         do {

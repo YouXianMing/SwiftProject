@@ -45,16 +45,16 @@ class FixedHeightCell: BaseTableViewCell {
     
     override func cellSelectedEvent() {
         
-        print(adapter?.data ?? "")
+        appPrint(adapter?.data ?? "")
     }
     
     override func willDisplay(_ indexPath: IndexPath) {
         
-        print("FixedHeightCell willDisplay")
+        appPrint("FixedHeightCell willDisplay")
     }
     
     override func didEndDisplaying(_ indexPath: IndexPath) {
         
-        print("FixedHeightCell didEndDisplaying")
+        appPrint("FixedHeightCell didEndDisplaying")
     }
 }
