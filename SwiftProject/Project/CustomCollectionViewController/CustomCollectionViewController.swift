@@ -62,10 +62,24 @@ class CustomCollectionViewController: NormalTitleViewController {
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
+            
+            appPrint(customCollectionView.contentSize)
+            
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
+            
+            appPrint(customCollectionView.contentSize)
+            
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
+            
+            appPrint(customCollectionView.contentSize)
+            
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
+            
+            appPrint(customCollectionView.contentSize)
+            
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
+            
+            appPrint(customCollectionView.contentSize)
         }
     }
     

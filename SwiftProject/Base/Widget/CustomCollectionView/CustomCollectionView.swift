@@ -31,6 +31,13 @@ class CustomCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDa
     /// 事件block
     var eventBlock : CustomCollectionViewBlock?
     
+    /// 是否可以滑动
+    var canScroll : Bool {
+        
+        set(newVal) { collectionView.isScrollEnabled = newVal}
+        get { return collectionView.isScrollEnabled}
+    }
+    
     // MARK: 只读属性
     
     /// collectionView的header是否使用sticky模式
@@ -41,6 +48,18 @@ class CustomCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDa
     
     /// collectionView
     var collectionView : UICollectionView { get { return privateCollectionView!}}
+    
+    /// 获取collectionView的contentSize
+    /// [注意] 获取contentSize时,会调用collectionView的reloadData方法,之后再调用layoutIfNeeded方法,开销比较大,建议在所有数据都加载完后调用此getter方法
+    var contentSize : CGSize {
+        
+        get {
+            
+            collectionView.reloadData()
+            collectionView.layoutIfNeeded()
+            return collectionView.contentSize
+        }
+    }
     
     // MARK: 私有属性
     
@@ -270,4 +289,8 @@ class CustomCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDa
             eventDelegate.customCollectionView(self, eventView: headerFooterView, event: event)
         }
     }
+    
+    // MARK: 析构方法
+    
+    deinit { print("♨️ '\(String(describing: self.classForCoder))' is released.")}
 }

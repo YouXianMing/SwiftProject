@@ -9,6 +9,8 @@ import UIKit
 
 class CollectionReusableViewAdapter: NSObject {
 
+    // MARK: 属性
+    
     /// cell的重用标识
     var reuseIdentifier : String?
     

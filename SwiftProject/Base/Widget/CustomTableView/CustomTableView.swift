@@ -31,6 +31,13 @@ class CustomTableView: UIView, UITableViewDelegate, UITableViewDataSource, BaseT
     /// 事件block
     var eventBlock : CustomTableViewEventBlock?
     
+    /// 是否可以滑动
+    var canScroll : Bool {
+        
+        set(newVal) { tableView.isScrollEnabled = newVal}
+        get { return tableView.isScrollEnabled}
+    }
+    
     // MARK: 只读属性
     
     /// tableView的header与footer是否使用sticky模式
@@ -38,6 +45,18 @@ class CustomTableView: UIView, UITableViewDelegate, UITableViewDataSource, BaseT
     
     /// tableView
     var tableView : UITableView { get { return privateTableView!}}
+    
+    /// 获取tableView的contentSize
+    /// [注意] 获取contentSize时,会调用tableView的reloadData方法,之后再调用layoutIfNeeded方法,开销比较大,建议在所有数据都加载完后调用此getter方法
+    var contentSize : CGSize {
+        
+        get {
+            
+            tableView.reloadData()
+            tableView.layoutIfNeeded()
+            return tableView.contentSize
+        }
+    }
     
     // MARK: 私有属性
     
@@ -246,4 +265,8 @@ class CustomTableView: UIView, UITableViewDelegate, UITableViewDataSource, BaseT
             eventDelegate.customTableView(self, eventView: headerFooterView, event: event)
         }
     }
+    
+    // MARK: 析构方法
+    
+    deinit { print("♨️ '\(String(describing: self.classForCoder))' is released.")}
 }

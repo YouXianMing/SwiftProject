@@ -136,10 +136,7 @@ class SheetInfoView: UIView {
     
     // MARK: 系统方法
     
-    deinit {
-        
-        print("[❌] '" + String(describing: self.classForCoder) + "' is released.")
-    }
+    deinit { print("♨️ '\(String(describing: self.classForCoder))' is released.")}
 }
 
 class SheetInfoContentViewBuilder: NSObject {
