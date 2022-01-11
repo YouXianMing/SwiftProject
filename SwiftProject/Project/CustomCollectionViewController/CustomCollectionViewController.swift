@@ -31,20 +31,22 @@ class CustomCollectionViewController: NormalTitleViewController {
         contentView.addSubview(customCollectionView)
         customCollectionView.snp.makeConstraints { make in make.edges.equalToSuperview()}
         
-        customCollectionView.addEventBlock { view, data in
+        customCollectionView.addEventBlock { [weak self] view, data in
             
-            if let _ = view as? GoodsItemCell {
+            self?.showView()
             
-                appPrint(data ?? "")
-                
-            } else if let _ = view as? GoodsHeader {
-                
-                appPrint(data ?? "")
-                
-            } else if let _ = view as? GoodsFooter {
-                
-                appPrint(data ?? "")
-            }
+//            if let _ = view as? GoodsItemCell {
+//
+//                appPrint(data ?? "")
+//
+//            } else if let _ = view as? GoodsHeader {
+//
+//                appPrint(data ?? "")
+//
+//            } else if let _ = view as? GoodsFooter {
+//
+//                appPrint(data ?? "")
+//            }
         }
         
         do {
@@ -65,5 +67,16 @@ class CustomCollectionViewController: NormalTitleViewController {
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
             section.adapters.append(GoodsItemCell.adapter(size: GoodsItemCell.sizeWithData()))
         }
+    }
+    
+    func showView() {
+        
+        let sheetView         = SheetInfoView.init()
+        sheetView.contentView = navigationController?.view
+        // sheetView.viewBuilder = SheetInfoViewBuilder()
+        sheetView.viewBuilder = AutoLayoutSheetInfoViewBuilder()
+        sheetView.canTapBackgroundToHide = true
+        sheetView.buildSubviews(with: "Hello world")
+        sheetView.show()
     }
 }

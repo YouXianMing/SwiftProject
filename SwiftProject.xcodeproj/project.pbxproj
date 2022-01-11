@@ -70,6 +70,10 @@
 		04B3CCB9278C11C800A58FBA /* BaseIGListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCB8278C11C800A58FBA /* BaseIGListCell.swift */; };
 		04B3CCBB278C18B000A58FBA /* IGListType1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCBA278C18B000A58FBA /* IGListType1Cell.swift */; };
 		04B3CCBF278C1CE300A58FBA /* IGListCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCBE278C1CE300A58FBA /* IGListCellInfo.swift */; };
+		04B3CCC1278C1FB200A58FBA /* SheetInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCC0278C1FB200A58FBA /* SheetInfoView.swift */; };
+		04B3CCC5278C313E00A58FBA /* UIView+ManualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCC4278C313E00A58FBA /* UIView+ManualLayout.swift */; };
+		04B3CCC7278C411000A58FBA /* ManualLayoutSheetInfoViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCC6278C411000A58FBA /* ManualLayoutSheetInfoViewBuilder.swift */; };
+		04B3CCC9278C67D200A58FBA /* AutoLayoutSheetInfoViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3CCC8278C67D200A58FBA /* AutoLayoutSheetInfoViewBuilder.swift */; };
 		B9BB829CB345AFE0ABBB518F /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3041D646A553CEE58FE7A1 /* Pods_SwiftProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +143,10 @@
 		04B3CCB8278C11C800A58FBA /* BaseIGListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIGListCell.swift; sourceTree = "<group>"; };
 		04B3CCBA278C18B000A58FBA /* IGListType1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListType1Cell.swift; sourceTree = "<group>"; };
 		04B3CCBE278C1CE300A58FBA /* IGListCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListCellInfo.swift; sourceTree = "<group>"; };
+		04B3CCC0278C1FB200A58FBA /* SheetInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetInfoView.swift; sourceTree = "<group>"; };
+		04B3CCC4278C313E00A58FBA /* UIView+ManualLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ManualLayout.swift"; sourceTree = "<group>"; };
+		04B3CCC6278C411000A58FBA /* ManualLayoutSheetInfoViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLayoutSheetInfoViewBuilder.swift; sourceTree = "<group>"; };
+		04B3CCC8278C67D200A58FBA /* AutoLayoutSheetInfoViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutSheetInfoViewBuilder.swift; sourceTree = "<group>"; };
 		BEFD1300795B8A818F73CC6C /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E831217CA7BA3811EE34AB43 /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		EA3041D646A553CEE58FE7A1 /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				04A97DCA278424D000A27432 /* CustomCollectionViewController.swift */,
+				04B3CCC0278C1FB200A58FBA /* SheetInfoView.swift */,
+				04B3CCC6278C411000A58FBA /* ManualLayoutSheetInfoViewBuilder.swift */,
+				04B3CCC8278C67D200A58FBA /* AutoLayoutSheetInfoViewBuilder.swift */,
 				04A97DCB278424D000A27432 /* Views */,
 			);
 			path = CustomCollectionViewController;
@@ -435,6 +446,7 @@
 				04A97DE7278424D000A27432 /* NSObject+EventBlock.swift */,
 				04A97DE8278424D000A27432 /* UIView+AddTapGesture.swift */,
 				04A97DE9278424D000A27432 /* UIView+SetRect.swift */,
+				04B3CCC4278C313E00A58FBA /* UIView+ManualLayout.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -620,7 +632,9 @@
 				04A97E25278424D100A27432 /* NormalTitleViewController.swift in Sources */,
 				04A97E0B278424D100A27432 /* GoodsHeader.swift in Sources */,
 				04A97E17278424D100A27432 /* BaseTableViewCell.swift in Sources */,
+				04B3CCC7278C411000A58FBA /* ManualLayoutSheetInfoViewBuilder.swift in Sources */,
 				04B3CCB9278C11C800A58FBA /* BaseIGListCell.swift in Sources */,
+				04B3CCC5278C313E00A58FBA /* UIView+ManualLayout.swift in Sources */,
 				04A97E0A278424D100A27432 /* GoodsItemCell.swift in Sources */,
 				04B3CC9C278BD72900A58FBA /* DebugPrint.swift in Sources */,
 				04A97E03278424D100A27432 /* Section_1_Footer.swift in Sources */,
@@ -638,12 +652,14 @@
 				04A97E19278424D100A27432 /* TableViewSection.swift in Sources */,
 				04A97E1F278424D100A27432 /* UIView+AddTapGesture.swift in Sources */,
 				04A97DFD278424D100A27432 /* MenuController.swift in Sources */,
+				04B3CCC9278C67D200A58FBA /* AutoLayoutSheetInfoViewBuilder.swift in Sources */,
 				04A97E05278424D100A27432 /* Section_2_Footer.swift in Sources */,
 				0457FAB12787E0E2002598FD /* IGListKitController.swift in Sources */,
 				04A97E01278424D100A27432 /* Section_2_Header.swift in Sources */,
 				04A97E07278424D100A27432 /* PlaceholderViewConfigs.swift in Sources */,
 				04A97E00278424D100A27432 /* TableViewAdapterController.swift in Sources */,
 				04A97DF3278424D100A27432 /* CollectionViewFixedSizeCell.swift in Sources */,
+				04B3CCC1278C1FB200A58FBA /* SheetInfoView.swift in Sources */,
 				04A97E1D278424D100A27432 /* UIView+Debug.swift in Sources */,
 				04A97E0D278424D100A27432 /* LabelPlaceholderImageView.swift in Sources */,
 				04A97E11278424D100A27432 /* CollectionViewCellAdapter.swift in Sources */,
