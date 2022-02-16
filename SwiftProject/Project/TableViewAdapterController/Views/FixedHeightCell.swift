@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 class FixedHeightCell: BaseTableViewCell {
     
@@ -38,8 +39,8 @@ class FixedHeightCell: BaseTableViewCell {
         
         if let height = adapter?.height {
             
-            infoLabel.centerY = height / 2
-            infoLabel.centerX = Screen.width / 2
+            infoLabel.ml_centerY = height / 2
+            infoLabel.ml_centerX = Screen.width / 2
         }
     }
     

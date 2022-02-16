@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import ProjectBaseLibs
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

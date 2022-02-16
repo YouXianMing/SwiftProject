@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 class IGListType1Cell: BaseIGListCell {
     

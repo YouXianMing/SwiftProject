@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 /// label类型的占位图
 class LabelTypePlaceholderViewConfig : BasePlaceholderViewConfig {

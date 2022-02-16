@@ -1,0 +1,24 @@
+{
+  "name": "ProjectBaseLibs",
+  "version": "1.0.0",
+  "summary": "A short description of ProjectBaseLibs.",
+  "description": "swift开发基础库",
+  "homepage": "https://www.github.com/Eano-iOS",
+  "license": "LICENSE",
+  "authors": {
+    "Eano-iOS-Developer": "Eano-iOS-Developer@icloud.com"
+  },
+  "source": {
+    "git": "https://www.github.com/Eano-iOS",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "Kingfisher": [
+
+    ]
+  }
+}

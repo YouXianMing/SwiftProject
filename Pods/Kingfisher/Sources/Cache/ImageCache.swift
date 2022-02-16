@@ -182,19 +182,11 @@ open class ImageCache {
 
         let notifications: [(Notification.Name, Selector)]
         #if !os(macOS) && !os(watchOS)
-        #if swift(>=4.2)
         notifications = [
             (UIApplication.didReceiveMemoryWarningNotification, #selector(clearMemoryCache)),
             (UIApplication.willTerminateNotification, #selector(cleanExpiredDiskCache)),
             (UIApplication.didEnterBackgroundNotification, #selector(backgroundCleanExpiredDiskCache))
         ]
-        #else
-        notifications = [
-            (NSNotification.Name.UIApplicationDidReceiveMemoryWarning, #selector(clearMemoryCache)),
-            (NSNotification.Name.UIApplicationWillTerminate, #selector(cleanExpiredDiskCache)),
-            (NSNotification.Name.UIApplicationDidEnterBackground, #selector(backgroundCleanExpiredDiskCache))
-        ]
-        #endif
         #elseif os(macOS)
         notifications = [
             (NSApplication.willResignActiveNotification, #selector(cleanExpiredDiskCache)),
@@ -331,6 +323,7 @@ open class ImageCache {
                     processorIdentifier: identifier,
                     callbackQueue: callbackQueue,
                     expiration: options.diskCacheExpiration,
+                    writeOptions: options.diskStoreWriteOptions,
                     completionHandler: completionHandler)
             } else {
                 guard let completionHandler = completionHandler else { return }
@@ -416,12 +409,13 @@ open class ImageCache {
         processorIdentifier identifier: String = "",
         callbackQueue: CallbackQueue = .untouch,
         expiration: StorageExpiration? = nil,
+        writeOptions: Data.WritingOptions = [],
         completionHandler: ((CacheStoreResult) -> Void)? = nil)
     {
         let computedKey = key.computedKey(with: identifier)
         let result: CacheStoreResult
         do {
-            try self.diskStorage.store(value: data, forKey: computedKey, expiration: expiration)
+            try self.diskStorage.store(value: data, forKey: computedKey, expiration: expiration, writeOptions: writeOptions)
             result = CacheStoreResult(memoryCacheResult: .success(()), diskCacheResult: .success(()))
         } catch {
             let diskError: KingfisherError
@@ -482,10 +476,23 @@ open class ImageCache {
         }
     }
 
-    func retrieveImage(forKey key: String,
-                       options: KingfisherParsedOptionsInfo,
-                       callbackQueue: CallbackQueue = .mainCurrentOrAsync,
-                       completionHandler: ((Result<ImageCacheResult, KingfisherError>) -> Void)?)
+    // MARK: Getting Images
+
+    /// Gets an image for a given key from the cache, either from memory storage or disk storage.
+    ///
+    /// - Parameters:
+    ///   - key: The key used for caching the image.
+    ///   - options: The `KingfisherParsedOptionsInfo` options setting used for retrieving the image.
+    ///   - callbackQueue: The callback queue on which `completionHandler` is invoked. Default is `.mainCurrentOrAsync`.
+    ///   - completionHandler: A closure which is invoked when the image getting operation finishes. If the
+    ///                        image retrieving operation finishes without problem, an `ImageCacheResult` value
+    ///                        will be sent to this closure as result. Otherwise, a `KingfisherError` result
+    ///                        with detail failing reason will be sent.
+    open func retrieveImage(
+        forKey key: String,
+        options: KingfisherParsedOptionsInfo,
+        callbackQueue: CallbackQueue = .mainCurrentOrAsync,
+        completionHandler: ((Result<ImageCacheResult, KingfisherError>) -> Void)?)
     {
         // No completion handler. No need to start working and early return.
         guard let completionHandler = completionHandler else { return }
@@ -530,8 +537,6 @@ open class ImageCache {
         }
     }
 
-    // MARK: Getting Images
-
     /// Gets an image for a given key from the cache, either from memory storage or disk storage.
     ///
     /// - Parameters:
@@ -542,6 +547,9 @@ open class ImageCache {
     ///                        image retrieving operation finishes without problem, an `ImageCacheResult` value
     ///                        will be sent to this closure as result. Otherwise, a `KingfisherError` result
     ///                        with detail failing reason will be sent.
+    ///
+    /// Note: This method is marked as `open` for only compatible purpose. Do not overide this method. Instead, override
+    ///       the version receives `KingfisherParsedOptionsInfo` instead.
     open func retrieveImage(forKey key: String,
                                options: KingfisherOptionsInfo? = nil,
                         callbackQueue: CallbackQueue = .mainCurrentOrAsync,
@@ -554,7 +562,14 @@ open class ImageCache {
             completionHandler: completionHandler)
     }
 
-    func retrieveImageInMemoryCache(
+    /// Gets an image for a given key from the memory storage.
+    ///
+    /// - Parameters:
+    ///   - key: The key used for caching the image.
+    ///   - options: The `KingfisherParsedOptionsInfo` options setting used for retrieving the image.
+    /// - Returns: The image stored in memory cache, if exists and valid. Otherwise, if the image does not exist or
+    ///            has already expired, `nil` is returned.
+    open func retrieveImageInMemoryCache(
         forKey key: String,
         options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage?
     {
@@ -569,6 +584,9 @@ open class ImageCache {
     ///   - options: The `KingfisherOptionsInfo` options setting used for retrieving the image.
     /// - Returns: The image stored in memory cache, if exists and valid. Otherwise, if the image does not exist or
     ///            has already expired, `nil` is returned.
+    ///
+    /// Note: This method is marked as `open` for only compatible purpose. Do not overide this method. Instead, override
+    ///       the version receives `KingfisherParsedOptionsInfo` instead.
     open func retrieveImageInMemoryCache(
         forKey key: String,
         options: KingfisherOptionsInfo? = nil) -> KFCrossPlatformImage?
@@ -708,11 +726,7 @@ open class ImageCache {
 
         func endBackgroundTask(_ task: inout UIBackgroundTaskIdentifier) {
             sharedApplication.endBackgroundTask(task)
-            #if swift(>=4.2)
             task = UIBackgroundTaskIdentifier.invalid
-            #else
-            task = UIBackgroundTaskInvalid
-            #endif
         }
         
         var backgroundTask: UIBackgroundTaskIdentifier!

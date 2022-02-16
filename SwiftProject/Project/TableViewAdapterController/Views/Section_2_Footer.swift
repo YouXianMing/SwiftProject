@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 class Section_2_Footer: BaseTableViewHeaderFooterView {
 

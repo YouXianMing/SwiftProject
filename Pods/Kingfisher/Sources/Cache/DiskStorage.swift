@@ -122,11 +122,13 @@ public enum DiskStorage {
         ///   - key: The key to which the `value` will be stored. If there is already a value under the key,
         ///          the old value will be overwritten by `value`.
         ///   - expiration: The expiration policy used by this store action.
+        ///   - writeOptions: Data writing options used the new files.
         /// - Throws: An error during converting the value to a data format or during writing it to disk.
         public func store(
             value: T,
             forKey key: String,
-            expiration: StorageExpiration? = nil) throws
+            expiration: StorageExpiration? = nil,
+            writeOptions: Data.WritingOptions = []) throws
         {
             guard storageReady else {
                 throw KingfisherError.cacheError(reason: .diskStorageIsNotReady(cacheURL: directoryURL))
@@ -145,7 +147,7 @@ public enum DiskStorage {
 
             let fileURL = cacheFileURL(forKey: key)
             do {
-                try data.write(to: fileURL)
+                try data.write(to: fileURL, options: writeOptions)
             } catch {
                 throw KingfisherError.cacheError(
                     reason: .cannotCreateCacheFile(fileURL: fileURL, key: key, data: data, error: error)
@@ -316,6 +318,9 @@ public enum DiskStorage {
                 let hashedKey = key.kf.md5
                 if let ext = config.pathExtension {
                     return "\(hashedKey).\(ext)"
+                } else if config.autoExtAfterHashedFileName,
+                          let ext = key.kf.ext {
+                    return "\(hashedKey).\(ext)"
                 }
                 return hashedKey
             } else {
@@ -447,6 +452,11 @@ extension DiskStorage {
 
         /// Default is `true`, means that the cache file name will be hashed before storing.
         public var usesHashedFileName = true
+
+        /// Default is `false`
+        /// If set to `true`, image extension will be extracted from original file name and append to
+        /// the hased file name and used as the cache key on disk.
+        public var autoExtAfterHashedFileName = false
 
         let name: String
         let fileManager: FileManager

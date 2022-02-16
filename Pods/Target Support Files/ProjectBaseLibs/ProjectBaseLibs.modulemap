@@ -1,0 +1,6 @@
+framework module ProjectBaseLibs {
+  umbrella header "ProjectBaseLibs-umbrella.h"
+
+  export *
+  module * { export * }
+}

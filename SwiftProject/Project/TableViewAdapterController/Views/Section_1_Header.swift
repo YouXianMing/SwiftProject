@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 class Section_1_Header: BaseTableViewHeaderFooterView {
 
@@ -34,8 +35,8 @@ class Section_1_Header: BaseTableViewHeaderFooterView {
         }
         
         infoLabel.sizeToFit()
-        infoLabel.centerX = Screen.width / 2
-        infoLabel.centerY = (adapter?.height ?? 0) / 2
+        infoLabel.ml_centerX = Screen.width / 2
+        infoLabel.ml_centerY = (adapter?.height ?? 0) / 2
     }
     
     override func willDisplay(_ section: Int) {

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import ProjectBaseLibs
 
 class CustomCollectionViewController: NormalTitleViewController {
 

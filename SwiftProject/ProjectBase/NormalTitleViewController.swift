@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 class NormalTitleViewController: LayoutBaseViewController {
 
@@ -97,10 +98,10 @@ class NormalTitleViewController: LayoutBaseViewController {
             titleContentView.addSubview(titleLabel)
             titleContentView.addSubview(line)
             
-            titleContentView.frame = CGRect(x: 0, y: Screen.statusBarHeight, width: Screen.width, height: titleView.height - Screen.statusBarHeight)
-            backButton.frame       = CGRect(x: 0, y: 0, width: 70, height: titleContentView.height)
-            titleLabel.frame       = CGRect(x: 70, y: 0, width: titleContentView.width - 70 * 2, height: titleContentView.height)
-            line.frame             = CGRect(x: 0, y: titleContentView.height - 1, width: Screen.width, height: 1)
+            titleContentView.frame = CGRect(x: 0, y: Screen.statusBarHeight, width: Screen.width, height: titleView.ml_height - Screen.statusBarHeight)
+            backButton.frame       = CGRect(x: 0, y: 0, width: 70, height: titleContentView.ml_height)
+            titleLabel.frame       = CGRect(x: 70, y: 0, width: titleContentView.ml_width - 70 * 2, height: titleContentView.ml_height)
+            line.frame             = CGRect(x: 0, y: titleContentView.ml_height - 1, width: Screen.width, height: 1)
         }
     }
 }

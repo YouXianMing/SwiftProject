@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectBaseLibs
 
 class CollectionViewAutolayoutCell: BaseCollectionViewCell {
     

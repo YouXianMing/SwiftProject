@@ -14,5 +14,8 @@ target 'SwiftProject' do
   
   # IGListKit
   pod 'IGListKit', '~> 4.0.0'
+  
+  # 本地组件库(不依赖于任何业务)
+  pod 'ProjectBaseLibs', :path => './LocalLibs/ProjectBaseLibs'
 
 end
